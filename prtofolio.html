@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> my prtfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .navbar {
+      width: 100%;
+      height: 30px;
+      /* border: 2px solid black; */
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .home-info {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      padding-left: 50px;
+    }
+
+    .home-img {
+      position: relative;
+      width: 40%;
+      height: 40%;
+      /* border: 4px solid red; */
+      object-fit: contain;
+
+      /* justify-content: space-around; */
+      text-align: center;
+      /* padding: 20px; */
+      margin-left: 30px;
+    }
+
+    .icon-hover {
+      transition: box-shadow 1s ease;
+    }
+
+    button:hover {
+      box-shadow: 0 0 10px rgb(177, 254, 61);
+      transition-duration: 0.3s;
+      background-color: rgb(31, 36, 45);
+    }
+
+    .icon-hover:hover {
+      box-shadow: 0 0 10px rgb(177, 254, 61);
+      transition-duration: 0.3s;
+      background-color: green;
+    }
+
+    .move1 {
+      position: relative;
+      border-radius: 50%;
+      transition: transform 1s linear ease;
+      animation: move11 6s ease-in-out infinite alternate-reverse,
+        bordercolor 6s ease infinite;
+    }
+
+    @keyframes move11 {
+
+
+      from {
+        transform: translate(50px, 0px);
+      }
+
+      to {
+        transform: translate(85vh, 0);
+      }
+    }
+
+    .move2 {
+      position: relative;
+      border-radius: 50%;
+      top: -20px;
+      animation: move22 6s ease-in-out infinite alternate-reverse,
+        bordercolor 6s ease infinite;
+
+
+
+    }
+
+
+    @keyframes move22 {
+      from {
+        left: 80%;
+      }
+
+      to {
+        left: 10%;
+      }
+    }
+
+    @keyframes bordercolor {
+      0% {
+        border-color: lime;
+      }
+
+      25% {
+        border-color: cyan;
+      }
+
+      50% {
+        border-color: yellow;
+      }
+
+      75% {
+        border-color: red;
+      }
+
+      100% {
+        border-color: lime;
+      }
+    }
+
+    .img1 {
+      border: 3px solid rgb(177, 254, 61);
+      border-radius: 5px 40px 5px 40px;
+      overflow: hidden;
+
+
+    }
+
+    .img1:hover {
+      box-shadow: 0 0 20px rgb(177, 254, 61);
+      transition-duration: 0.3s;
+    }
+
+    .aboutus_content {
+      /* transition: transform 1s ease-in-out; */
+      /* animation: moveabout 1s ease-in-out alternate; */
+      /* transform: rotateY(20deg); */
+      transition: transform 1s ease-out;
+ perspective: 1000px;    }
+
+    .aboutus_content:hover {
+      box-shadow: 0 0 20px rgb(177, 254, 61);
+      transition-duration: 0.3s;
+      transform: perspective(1000px) rotateY(15deg);
+      /* transform: rotateY(-25deg); */
+    }
+
+    .p_move {
+
+      width: 300px;
+      height: 300px;
+
+      position: relative;
+    }
+
+    /* @media (min-width:600px) {
+      .p_move{
+        width: 300px;
+        height: 300px;
+      }
+    } */
+    .about_div1 {
+      width: 100px;
+      height: 100px;
+      border: 3px solid black;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      transition: transform 1s ease-in-out;
+      animation: move1 1s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes move1 {
+      from {
+        transform: translate(0px, 0px);
+      }
+
+      to {
+        transform: translate(175px, 175px);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .about_div2 {
+        width: 60px;
+        height: 60px;
+        top: 5px;
+        right: 5px;
+      }
+    }
+
+
+
+    .about_div2 {
+      width: 100px;
+      height: 100px;
+      border: 3px solid black;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+
+    @media (max-width: 800px) {
+      .about_div2 {
+        width: 60px;
+        height: 60px;
+        top: 5px;
+        right: 5px;
+      }
+    }
+
+    .about_div3 {
+      width: 100px;
+      height: 100px;
+      border: 3px solid black;
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+    }
+
+    @media (max-width: 800px) {
+      .about_div3 {
+        width: 60px;
+        height: 60px;
+        bottom: 5px;
+        left: 5px;
+      }
+    }
+
+    .about_div4 {
+      width: 100px;
+      height: 100px;
+      border: 3px solid black;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
+
+    @media (max-width: 800px) {
+      .about_div4 {
+        width: 60px;
+        height: 60px;
+        bottom: 5px;
+        right: 5px;
+      }
+    }
+
+    .experience {
+      transition: transform 0.3s ease-in-out;
+      border: 10px solid greenyellow;
+      perspective: 1000px;
+    }
+
+    .experience:hover {
+      transform:scale(1.1);
+      border-radius: 25px 0px 25px 0px;
+     
+      transition: transform 1s ease-in-out;
+      box-shadow:
+             0 -5px 0 greenyellow,
+             0 6px 34px -10px blue;
+
+    }
+    .port_content{
+      width: 80%;
+      /* height: 50%; */
+      /* background-color: antiquewhite; */
+      /* border: 2px solid yellowgreen; */
+      margin: 35px;
+      margin-right: 35px;
+      padding: 20px;
+      border-radius: 14px;
+      transition:  transform 2s ease-in-out;
+      border-left: 3px solid yellowgreen;
+
+
+    }
+    .port_content:hover{
+        margin-right: 35px;
+      transition-duration: 0.5s;
+      transform:  perspective(1000px) rotate3d(0, 1, 0, -15deg);
+      box-shadow:   5px 5px 10px yellow;
+    }
+    @media (max-width:600px) {
+      
+    }
+  </style>
+</head>
+
+<body class=" bg-[rgb(31,36,45)]">
+
+  <nav class="navbar flex justify-between">
+    <div class="logo text-white"> Chandan Prajapati</div>
+    <ul class="flex space-x-10 text-[#7cf03d]">
+      <a href="#home"> Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#profile">Profile</a>
+      <a href="service"> Service </a>
+      <a href="#contect">contect</a>
+
+    </ul>
+  </nav>
+
+
+  <!-- <section class="home-info  h-[100vh]" id="home">
+
+    <div class="home-info grid  text-white w-[65%] h-[50%] mt-24">
+      <h1 class="font-bold text-3xl text-white grid">Chandan Prajapati</h1>
+      <h1 class=" text-green-500 text-2xl font-medium"> I am a </h1>
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos voluptatum omnis accusamus, dignissimos sequi
+        quaerat asperiores veniam vel ex suscipit, quidem culpa laboriosam soluta quas quo incidunt repellat, est illum!
+      </p>
+      <br>
+      <div class="w-[58%] flex justify-around justify-center align-center text-center ">
+        <button class="bg-green-500 w-32 h-12 rounded-2xl icon-hover hover:bg-[rgb(31,36,45)]"> Download CV </button>
+
+        <div class=" w-10 h-10 rounded-3xl border text-center pt-1 icon-hover"><i
+            class="fa-brands fa-github text-2xl"></i></div>
+        <div class=" w-10 h-10 rounded-3xl border text-center pt-1 icon-hover"><i
+            class="fa-brands fa-linkedin-in text-2xl"></i></div>
+        <div class=" w-10 h-10 rounded-3xl border text-center pt-1 icon-hover"><i
+            class="fa-brands fa-twitter text-2xl"></i></div>
+        <div class=" w-10 h-10 rounded-3xl border text-center pt-1 icon-hover"><i
+            class="fa-brands fa-youtube text-2xl"></i></div>
+        <div class=" w-10 h-10 rounded-3xl border text-center pt-1 icon-hover"><i
+            class="fa-brands fa-instagram text-2xl"></i></div>
+      </div>
+
+
+    </div>
+
+    </div>
+
+    <div class="home-img w-[25%]   rounded-full border-4  border-[rgb(177, 254, 61)] overflow-hidden">
+      <img class="h-[60%] w-[60%] object-contain black " src="C:\Users\chand\Desktop\protofolio\imeges\removebgchandan-removebg-preview (1).png" alt="chandan">
+
+    </div> -->
+
+
+  <section class="h-[100vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-16" id="home">
+
+    <!-- LEFT CONTENT -->
+    <div class="text-white w-full md:w-1/2 mt-10  space-y-4">
+
+      <h1 class="font-bold text-3xl ">Chandan Prajapati</h1>
+
+      <h2 class="text-green-400 text-xl md:text-2xl font-xl">
+        I am a Developer
+      </h2>
+
+      <p class="text-m md:text-lg text-gray-300">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet sunt officiis quibusdam at vero nesciunt quam
+        repellat deleniti velit, beatae, cupiditate blanditiis, voluptate ipsum cumque eum. Voluptate minima labore
+        illo?
+      </p>
+
+      <!-- BUTTON + ICONS -->
+      <div class="flex flex-wrap items-center gap-5">
+
+        <button class="bg-green-500 px-6 p-2 rounded-xl ">
+          Download CV
+        </button>
+
+        <div class="flex flex-cols gap-3">
+          <div class="w-10 h-10 rounded-full border  flex justify-center items-center">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="w-10 h-10 rounded-full border flex items-center justify-center icon-hover">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+          <div class="w-10 h-10 rounded-full border flex items-center justify-center icon-hover">
+            <i class="fa-brands fa-twitter"></i>
+          </div>
+          <div class="w-10 h-10 rounded-full border flex items-center justify-center icon-hover">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+          <div class="w-10 h-10 rounded-full border flex items-center justify-center icon-hover">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div
+      class=" w-[200px] md:w-[300px] rounded-full border-4 border-[rgb(177,254,61)] overflow-hidden aspect-square shadow-[0_0_10px_rgb(177,254,61)]">
+      <img class="w-full h-full object-contain" src="imeges\bgremovechandan.png" alt="chandan">
+    </div>
+
+  </section>
+  </section class>
+
+  <section class="w-full h-screen relative pt-[35px]" id="skills">
+    <div class="h-[100px] w-[100px] border-8 border-[rgb(177,254,61)] move1"></div>
+    <div class="h-24 w-24 border-8 border-[rgb(177,254,61)] mb-[20px] move2"></div>
+
+
+    <div class="grid grid-cols-4 gap-4 m-20  ">
+
+      <!-- <div class="img1"><img src="imeges/c.png" alt="" class="w-[100%] h-[80%] object-cover "></div> -->
+
+      <div class="img1 w-full max-w-[200px] aspect-square ">
+        <img src="imeges\c.png" class="w-full h-full object-cover">
+      </div>
+
+      <div class="img1 w-full max-w-[200px] aspect-square"> <img src="imeges/html.png" alt=""
+          class="w-full h-full object-cover"> </div>
+
+
+      <div class="w-full img1 max-w-[200px] aspect-square"> <img src="imeges/css.png"
+          class="w-full h-full object-cover"> </div>
+
+      <div class="img1 w-full max-w-[200px] "> <img src="imeges/js.png" alt="" class="w-full h-full object-cover">
+      </div>
+
+      <div class="img1 w-full max-w-[200px]"><img src="imeges/mongodb.png" alt="" class="w-full h-full object-cover">
+      </div>
+
+      <div class="img1 w-full max-w-[200px]"><img src="imeges/expressjs.png" alt=""
+          class="w-full h-full object-repeted"></div>
+
+      <div class="img1 w-full max-w-[200px]"><img src="imeges/react.png" alt="" class="w-full h-full object-cover">
+      </div>
+
+      <div class="img1 w-full max-w-[200px]"><img src="imeges/nodejs.png" alt="" class="w-full h-full object-cover">
+      </div>
+
+    </div>
+  </section>
+
+  <section
+    class="flex relative w-full min-h-screen text-white  border-2 border-black justify-center align-center p-[50px] "
+    id="about">
+
+    <div class="flex flex-col md:flex-row  w-full  gap-4 items-center justify-between  gap-4 max-w-6xl ">
+
+      <div class="w-full flex-[3] md:w-1/2  border border-[rgb(177,254,61)]  p-6 rounded-xl aboutus_content">
+        <h1 class="relative">About Us</h1>
+        <p class="relative ">Hi, I’m Chandna Prajapati a passionate web developer who loves building modern, responsive,
+          and user-friendly
+          websites. I enjoy learning new technologies and improving my skills every day. My goal is to create impactful
+          digital solutions that make people’s lives easier.
+          I enjoy solving problems, learning new tools, and continuously improving my skills. My aim is to create
+          websites that not only look great but also perform efficiently.
+          I enjoy solving problems, learning new tools, and continuously improving my skills. My aim is to create
+          websites that not only look great but also perform efficiently.</p>
+      </div>
+
+      <div class="w-full  border-4 rounded-xl p_move flex-[1] max-w-screen aspect-square">
+        <div class="about_div1 md:min-width"></div>
+        <div class="about_div2"></div>
+        <div class="about_div3"></div>
+        <div class="about_div4"></div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <section class="w-full h-screen relative pt-[30px] text-white" id="profile">
+    <div>
+      <div
+        class="w-[80%] h-[150px] border-2 border-black flex items-center justify-center  text-center  m-[10%]  experience ">
+        <h1 class="text-6xl text-[rgb(177,245,51)]">experience</h1>
+      </div>
+      <DIV class="flex port_content" >
+        <div class="">
+          <h1 class="text-2xl">Webdeveloper & digital marketing</h1>
+          <h3 class="text-xl p-2"> InternzVally pvt.ltd 2024 </h3>
+          <p class="p-2">Developed responsive UI, worked on real-world website projects, optimized performance, integrated APIs, and
+            collaborated in a professional developer team </p>
+          <DIV class="flex justify-between port_content_div p-4 ">
+            <div class="shadow-[5px_5px_10px_rgb(157,49,176)]">HTML</div>
+            <div class="shadow-[5px_5px_10px_rgb(157,49,176)]">CSS</div>
+            <div class="shadow-[5px_5px_10px_rgb(157,49,176)]">JS</div>
+            <div class="shadow-[5px_5px_10px_rgb(157,49,176)]">TAILWINDCSS</div>
+            <div class="shadow-[5px_5px_10px_rgb(157,49,176)]">REACT</div>
+            <div class="shadow-[5px_5px_10px_rgb(157,49,176)]">EXPRESS</div>
+            <DIV class="shadow-[5px_5px_10px_rgb(170,59,189)]">MONGOGB</DIV>
+            <DIV class="shadow-[5px_5px_10px_rgb(157,49,176)]">NODEJS</DIV>
+          </DIV>
+
+        </div>
+        <div class="p-4 mt-4">
+          <img src="imeges\removebg\nodejs-remve.png" alt="">
+        </div>
+      </DIV>
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+</body>
+
+</html>
